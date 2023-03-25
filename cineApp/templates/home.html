@@ -1,0 +1,20 @@
+{% extends 'inicio.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+           <center><img src= "https://img.freepik.com/vector-premium/doodle-claqueta-cine-dibujado-mano-elemento-pelicula-estilo-boceto_563464-266.jpg?w=2000" width="150" height="150"/></center>
+<br>
+   {% if user.is_authenticated %}
+       <center><b>Hola {{ user.username }}!</b>
+       <br><br>
+           <center></center><a href="/cineApp" class="btn btn-info">Ir a Listado de Cursos</a></center>
+
+       <br>
+           <center><a href="/salir" class="btn btn-danger">Cerrar Sesion</a></center>
+    {% else %}
+       <center><a href="/iniciarsesion" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Iniciar Sesion</a></center>
+          <br>
+       <center><a href="/inscribirse" class="btn btn-success">Registrate</a></center>
+    {% endif %}
+{%endblock%}

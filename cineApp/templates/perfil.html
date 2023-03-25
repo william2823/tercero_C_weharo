@@ -1,0 +1,20 @@
+{% extends "acceso.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+
+   {% if user.is_authenticated %}
+           <center><img src= "https://a.ltrbxd.com/logos/letterboxd-logo-v-neg-rgb.svg" width="150" height="150" /></center>
+       <center><b>Hola {{ user.username }}!</b>
+          <br><br>
+           <a href="/cineApp" class="btn btn-info">Secciones</a>
+
+
+
+          <br><br>
+          <a href="/salir" class="btn btn-danger">Salir</a>
+    {% else %}
+      <a href="/iniciarsesion" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Iniciar Sesion</a>
+      <a href="/inscribirse" class="btn btn-success">Registrate</a></center>
+    {% endif %}
+{%endblock%}

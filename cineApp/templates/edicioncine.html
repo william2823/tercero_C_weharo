@@ -1,0 +1,32 @@
+{% extends "./accesocine.html" %}
+
+{% block title %} Edición de guardado {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edición de guardado</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarcine/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="Codigo" name="Codigo" value="{{curso.codigo}}" class="form-control" placeholder="Código"
+                            minlength="6" maxlength="6" readonly required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="titulo" name="titulo" value="{{curso.titulo}}" class="form-control" placeholder="Titulo"
+                            maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="numprecios" name="numprecios" value="{{curso.precios}}" class="form-control" min="1" max="9"
+                            value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
